@@ -20,7 +20,6 @@ url_2 = "url_2.txt"
 
 def update_mudb_port():
     # 首先读取文件，更新端口号
-    mudb_file_path = "D:\\temp\ssr\\mudb.json"
     mudb_file = open(mudb_file_path, mode="r")
     mudb_str = mudb_file.read()
     if mudb_str is None or mudb_str == "":
