@@ -54,7 +54,7 @@ def str_to_base64(str_):
 def replace_params(mudb_json):
     url = base_format.replace("{ip}", mudb_json["user"]) \
         .replace("{ip}", mudb_json["user"]) \
-        .replace("{port}", mudb_json["port"]) \
+        .replace("{port}", str(mudb_json["port"])) \
         .replace("{protocol}", mudb_json["protocol"]) \
         .replace("{method}", mudb_json["method"]) \
         .replace("{obfs}", mudb_json["obfs"]) \
