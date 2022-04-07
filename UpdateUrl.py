@@ -90,8 +90,8 @@ def replace_url_src(url_):
     print("替换第" + str(index) + "行数据")
     if index >= lines.__len__():
         lines.append(url_)
-    for l in lines:
-        l = l.replace("\r", "").replace("\n", "")
+    else:
+        lines[index] = url_
     print(str(lines))
     write_str = "\n".join(lines)
     print(write_str)
