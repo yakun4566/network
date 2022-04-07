@@ -39,7 +39,7 @@ def update_mudb_port():
         return None
     mudb_file.close()
     mudb_json = mudb_dumps[0]
-    mudb_json["port"] = random.randint(1000, 65535)
+    mudb_json["port"] = get_port()
     print("更新后端口为:" + str(mudb_json["port"]))
     mudb_dumps[0] = mudb_json
     print(mudb_dumps)
