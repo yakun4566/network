@@ -12,7 +12,7 @@ mudb_file_path = "/usr/local/shadowsocksr/mudb.json"
 ssr_stop = "/etc/init.d/ssrmu stop"
 ssr_start = "/etc/init.d/ssrmu start"
 
-base_format = "{ip}:{protocol}:{method}:{obfs}:{passwd_base}/?group={group_base}&remarks={remarks_base}"
+base_format = "{ip}:{port}:{protocol}:{method}:{obfs}:{passwd_base}/?group={group_base}&remarks={remarks_base}"
 
 url_src = "url_src.txt"
 url_base64 = "url_base64.txt"
