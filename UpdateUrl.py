@@ -18,6 +18,9 @@ url_src = "url_src.txt"
 url_base64 = "url_base64.txt"
 url_2 = "url_2.txt"
 
+git_commit = 'git commit -am "提交修改"'
+git_push = "git push"
+
 def update_mudb_port():
     # 首先读取文件，更新端口号
     mudb_file = open(mudb_file_path, mode="r")
@@ -133,8 +136,9 @@ if __name__ == '__main__':
 
         os.system(ssr_start)
         # 提交git
-
+        os.system(git_commit)
         # 推送到远程
+        os.system(git_push)
     else:
         print("ssr配置文件未读取到")
 
