@@ -116,7 +116,7 @@ def base64_url():
 
 
 if __name__ == '__main__':
-
+    os.system(ssr_stop)
     # 更新端口
     mudb_dumps = update_mudb_port()
     if None is not mudb_dumps:
@@ -129,7 +129,7 @@ if __name__ == '__main__':
         print("ssr配置文件更新完成")
 
         # 重启服务
-        os.system(ssr_stop)
+
         os.system(ssr_start)
         # 提交git
 
