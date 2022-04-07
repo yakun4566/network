@@ -7,6 +7,7 @@
 import base64
 import json
 import os
+import random
 
 mudb_file_path = "/usr/local/shadowsocksr/mudb.json"
 ssr_stop = "/etc/init.d/ssrmu stop"
@@ -37,7 +38,7 @@ def update_mudb_port():
         return None
     mudb_file.close()
     mudb_json = mudb_dumps[0]
-    mudb_json["port"] += 1
+    mudb_json["port"] = random.randint(1000, 65535)
     print("更新后端口为:" + str(mudb_json["port"]))
     mudb_dumps[0] = mudb_json
     print(mudb_dumps)
