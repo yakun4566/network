@@ -22,6 +22,7 @@ url_2 = "url_2.txt"
 
 git_commit = 'git commit -am "提交修改"'
 git_push = "git push"
+git_pull = "git pull"
 
 def update_mudb_port():
     # 首先读取文件，更新端口号
@@ -147,6 +148,7 @@ def check_port_in_use(port, host='127.0.0.1'):
 
 
 if __name__ == '__main__':
+    os.system(git_pull)
     os.system(ssr_stop)
     # 更新端口
     mudb_dumps = update_mudb_port()
