@@ -7,6 +7,8 @@
 import base64
 import json
 import os
+import random
+import socket
 
 mudb_file_path = "/usr/local/shadowsocksr/mudb.json"
 ssr_stop = "/etc/init.d/ssrmu stop"
@@ -37,7 +39,7 @@ def update_mudb_port():
         return None
     mudb_file.close()
     mudb_json = mudb_dumps[0]
-    mudb_json["port"] += 1
+    mudb_json["port"] = get_port()
     print("更新后端口为:" + str(mudb_json["port"]))
     mudb_dumps[0] = mudb_json
     print(mudb_dumps)
@@ -117,6 +119,31 @@ def base64_url():
         result_str = str_to_base64(write_str)
         print(result_str)
         write_file(url_2, result_str)
+
+
+def get_port():
+    port = random.randint(1000, 65535)
+    while True:
+        flag = check_port_in_use(port=port)
+        if not flag:
+            break
+    return port
+
+
+def check_port_in_use(port, host='127.0.0.1'):
+    s = None
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(1)
+        s.connect((host, int(port)))
+        print("当前端口正在使用:" + str(port))
+        return True
+    except socket.error:
+        print("当前端口未使用:" + str(port))
+        return False
+    finally:
+        if s:
+            s.close()
 
 
 if __name__ == '__main__':
