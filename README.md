@@ -5,7 +5,8 @@
 ### 安装minicoda
 1. 下载脚本  
 ` wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh `
-
+- arm机器使用下面下载  
+` wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh`
 2. 安装 miniconda  
 ```
 chmod +x Miniconda3-latest-Linux-x86_64.sh  
