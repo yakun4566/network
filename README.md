@@ -4,15 +4,24 @@
 
 ### 安装minicoda
 1. 下载脚本  
-` wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh `
-- arm机器使用下面下载  
-` wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh`
-2. 安装 miniconda  
+``` 
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh 
 ```
-chmod +x Miniconda3-latest-Linux-x86_64.sh  
+- arm机器使用下面下载  
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh
+```
+2. 安装 miniconda  
+```shell
+chmod +x Miniconda3-latest-Linux-x86_64.sh
 ./Miniconda3-latest-Linux-x86_64.sh 
-```  
-一会回车，敲yes
+```
+- arm 机器
+```shell
+chmod +x Miniconda3-latest-Linux-aarch64.sh
+./Miniconda3-latest-Linux-aarch64.sh
+```
+一路回车，中间会提示敲yes
 > 重新打开窗口，conda才能生效（每次打开新窗口都需要切换用户 sudo su - root）
 
 ### 安装Python
@@ -24,6 +33,9 @@ chmod +x Miniconda3-latest-Linux-x86_64.sh
 ` conda activate python3_8 `
 
 ## shadowsocksr配置
+### 安装SSR服务
+`wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubiBackup/doubi/master/ssrmu.sh && chmod +x ssrmu.sh && bash ssrmu.sh`
+
 ### 修改ssr配置文件
 ` vi /usr/local/shadowsocksr/mudb.json `
 - 修改user为ip或域名
@@ -64,7 +76,7 @@ git config --global user.email "yakun4566@qq.com"
 ` pipenv install `
 
 ## 自动更新端口并推送到git
-`python UpdateUrl.py`
+`python UpdateUrl.py 或者 sh start.sh`
 
 
 
