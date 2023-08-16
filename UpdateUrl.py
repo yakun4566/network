@@ -153,16 +153,15 @@ if __name__ == '__main__':
     # 更新端口
     mudb_dumps = update_mudb_port()
     if None is not mudb_dumps:
-        # 生成url
-        url_ = replace_params(mudb_dumps[0])
-        # 读取url_src
-        replace_url_src(url_)
-        # 生成base64编码
-        base64_url()
-        print("ssr配置文件更新完成")
-
+        for mudb_dump in mudb_dumps:
+            # 生成url
+            url_ = replace_params(mudb_dump)
+            # 读取url_src
+            replace_url_src(url_)
+            # 生成base64编码
+            base64_url()
+            print("ssr配置文件更新完成")
         # 重启服务
-
         os.system(ssr_start)
         # 提交git
         os.system(git_commit)
