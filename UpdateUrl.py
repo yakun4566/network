@@ -25,9 +25,9 @@ git_push = "git push"
 git_pull = "git pull"
 
 # 移除旧端口
-command_remove_port = "firewalld-cmd --remove-port={port}/tcp"
+command_remove_port = "firewall-cmd --remove-port={port}/tcp"
 # 增加新端口
-command_add_port = "firewalld-cmd --permanent --add-port={port}/tcp"
+command_add_port = "firewall-cmd --permanent --add-port={port}/tcp"
 # 重新加载配置
 command_reload_firewalld = "firewall-cmd --reload"
 
