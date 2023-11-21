@@ -24,6 +24,14 @@ git_commit = 'git commit -am "提交修改"'
 git_push = "git push"
 git_pull = "git pull"
 
+# 移除旧端口
+command_remove_port = "firewalld-cmd --remove-port={port}/tcp"
+# 增加新端口
+command_add_port = "firewalld-cmd --permanent --add-port={port}/tcp"
+# 重新加载配置
+command_reload_firewalld = "firewall-cmd --reload"
+
+
 def update_mudb_port():
     # 首先读取文件，更新端口号
     mudb_file = open(mudb_file_path, mode="r")
@@ -40,8 +48,12 @@ def update_mudb_port():
         return None
     mudb_file.close()
     mudb_json = mudb_dumps[0]
+    old_port = mudb_json["port"]
+    print("旧后端:" + str(old_port))
+    remove_port(str(old_port))
     mudb_json["port"] = get_port()
-    print("更新后端口为:" + str(mudb_json["port"]))
+    print("新端口:" + str(mudb_json["port"]))
+    add_port(str(mudb_json["port"]))
     mudb_dumps[0] = mudb_json
     print(mudb_dumps)
     str2 = json.dumps(mudb_dumps, sort_keys=True, indent=4, separators=(',', ':'))
@@ -51,6 +63,14 @@ def update_mudb_port():
     mudb_file.close()
     return mudb_dumps
 
+
+def remove_port(port):
+    os.system(command_remove_port.replace("{port}", port))
+
+
+def add_port(port):
+    os.system(command_add_port.replace("{port}", port))
+    os.system(command_reload_firewalld)
 
 def str_to_base64(str_):
     return str(base64.urlsafe_b64encode(str_.encode("utf-8")), "utf-8").replace("=", "")
