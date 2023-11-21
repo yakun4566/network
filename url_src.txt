@@ -1,4 +1,4 @@
-bwg.onelol.top:21818:auth_aes128_md5:aes-128-ctr:plain:ZXdxZXdxMTI/?group=bWluZQ&remarks=
+bwg.onelol.top:12033:auth_aes128_md5:aes-128-ctr:plain:cndlcndlMjEx/?group=bWluZQ&remarks=5pCs55Om5bel77yI56iz5a6a77yJ
 orcl1.onelol.top:60318:auth_aes128_md5:aes-128-ctr:plain:ZG91Yi5pbw/?group=bWluZQ&remarks=QU1EMSAtIOebtOi_ng
 orcl2.onelol.top:47228:auth_aes128_md5:aes-128-ctr:plain:ZG91Yi5pbw/?group=bWluZQ&remarks=QU1EMiAgLSDnm7Tov54
 orcl4.onelol.top:41004:auth_aes128_md5:aes-128-ctr:plain:WWFrdW4xMzQ2MDEw/?group=bWluZQ&remarks=YXJtMiAtIOebtOi_ng
