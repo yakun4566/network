@@ -49,7 +49,7 @@ def update_mudb_port():
     mudb_file.close()
     mudb_json = mudb_dumps[0]
     old_port = mudb_json["port"]
-    print("旧后端:" + str(old_port))
+    print("旧端口:" + str(old_port))
     remove_port(str(old_port))
     mudb_json["port"] = get_port()
     print("新端口:" + str(mudb_json["port"]))
